@@ -14,22 +14,25 @@ The metrics and results can be generated with `evaluate.py`
 
 You can search promising networks by MBNAS
 
+```shell
 $ python ./src/DIV2K/train.py --output_dir='./outputs/x2_search' --num_epochs=500 --controller_training=True
 ```
 Train DeCoNASNet searched by DeCoNAS with, 
 ```shell
-$ python ./src/DIV2K/train.py --output_dir='./outputs/x2_scratch' --fine_tune=False --child_fixed_arc='1 1 1 1 1 0 1 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1 1 1 0 0 0 0 1' --controller_training=False
+$ python ./src/DIV2K/train.py --output_dir='./outputs/x2_scratch' --fine_tune=False --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
 ```
 
 After training DeCoNANet from scratch, finetune DeCoNASNet with, 
 ```shell
-$ python ./src/DIV2K/train.py --output_dir='./outputs/x2_finetune' --checkpoint='./outputs/x2/model.ckpt-931000' --fine_tune=True --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
+$ python ./src/DIV2K/train.py --output_dir='./outputs/x2_finetune' --checkpoint='./outputs/x2_scratch/model.ckpt-1000000' --fine_tune=True --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
 ```
 
 Finally, evaluate DeCoNASNet with,
 ```shell
 $ python ./src/DIV2K/evaluate.py 
 ```
+
+You can search and train for x3 image super-resolution task by adding argument --child_upsample_size=3
 
 # Result
 We construct MBNASNet with 4 MSBs, and each MSB has 4 layers. 
