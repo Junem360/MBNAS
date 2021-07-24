@@ -1,4 +1,4 @@
-# Neural Architecture Search for Image Super-Resolution Using Densely Connected Search Space: DeCoNAS
+# Multi-Branch Neural Architecture Search for Lightweight Image Super-resolution
 
 Basic implementation of MBNAS from Multi-Branch Neural Architecture Search for Lightweight Image Super-resolution.
 
