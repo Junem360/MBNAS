@@ -46,7 +46,7 @@ child_fixed_arc_High='2 0 1 2'
 For x2 scale super-resolution task, we evaluated the performance(PSNR and SSIM) of our MBNASNet on four datasets(Set5, Set14, B100, Urban100).
 
 <img src="https://github.com/Junem360/MBNAS/images/quantitative_result.png" height=100% width=100%>
-<img src="https://github.com/Junem360/MBNAS/images/qualitative_result.png" height=100% width=100%>
+<img src="https://github.com/Junem360/MBNAS/blob/main/images/qualitative_result.png" height=100% width=100%>
 
 
 # Requirements
