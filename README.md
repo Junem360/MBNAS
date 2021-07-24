@@ -22,7 +22,7 @@ Train MBNASNet searched by MBNAS with,
 $ python ./src/DIV2K/train.py --output_dir='./outputs/x2_scratch' --fine_tune=False --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
 ```
 
-After training DeCoNANet from scratch, finetune MBNASNet with, 
+After training MBNASNet from scratch, finetune MBNASNet with, 
 ```shell
 $ python ./src/DIV2K/train.py --output_dir='./outputs/x2_finetune' --checkpoint='./outputs/x2_scratch/model.ckpt-1000000' --fine_tune=True --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
 ```
