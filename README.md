@@ -17,17 +17,17 @@ You can search promising networks by MBNAS
 ```shell
 $ python ./src/DIV2K/train.py --output_dir='./outputs/x2_search' --num_epochs=500 --controller_training=True
 ```
-Train DeCoNASNet searched by DeCoNAS with, 
+Train MBNASNet searched by MBNAS with, 
 ```shell
 $ python ./src/DIV2K/train.py --output_dir='./outputs/x2_scratch' --fine_tune=False --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
 ```
 
-After training DeCoNANet from scratch, finetune DeCoNASNet with, 
+After training DeCoNANet from scratch, finetune MBNASNet with, 
 ```shell
 $ python ./src/DIV2K/train.py --output_dir='./outputs/x2_finetune' --checkpoint='./outputs/x2_scratch/model.ckpt-1000000' --fine_tune=True --child_fixed_arc_Low='0 0 1 2' --child_fixed_arc_Mid='0 0 1 2' --child_fixed_arc_High='2 0 1 2' --controller_training=False
 ```
 
-Finally, evaluate DeCoNASNet with,
+Finally, evaluate MBNASNet with,
 ```shell
 $ python ./src/DIV2K/evaluate.py 
 ```
